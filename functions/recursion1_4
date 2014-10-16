@@ -1,0 +1,31 @@
+ int startingWidth=5;
+ int count=0;
+
+void setup(){
+   size(500,500);
+    smooth(); 
+    background(0);
+  
+}
+
+void draw(){
+    ellipsePattern(startingWidth);
+    noLoop();
+}
+
+void ellipsePattern(int eWidth){
+ stroke(255,0,0);
+ fill(#ffffff);
+ // ellipse(width/2+eWidth,height/2+eWidth,startingWidth,startingWidth);
+ //ellipse(width/2-eWidth,height/2-eWidth,startingWidth,startingWidth);
+ 
+ ellipse(width/2+eWidth,height/2+eWidth,startingWidth+eWidth,startingWidth-eWidth);
+ ellipse(width/2-eWidth,height/2-eWidth,startingWidth-eWidth,startingWidth+eWidth);
+ eWidth=eWidth+2;
+  count++;
+ 
+  if (count<200){
+    ellipsePattern(eWidth);
+  }
+  
+}
