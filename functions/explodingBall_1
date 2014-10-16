@@ -1,0 +1,24 @@
+int x;
+int y;
+int z;
+
+void setup(){
+  size(600,600);
+}
+
+void draw(){
+  background(255);
+  x=mouseX;
+  y=mouseY;
+  z=int(random(50));
+  if (mousePressed){
+    z=z*10;
+}
+circles(x,y,z);
+}
+
+void circles(int x,int y,int size){
+  fill(240);
+  ellipse(x,y,size,size);
+  
+}
