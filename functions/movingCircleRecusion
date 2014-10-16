@@ -1,0 +1,32 @@
+ int startingWidth=450;
+ int count=0;
+
+void setup(){
+   size(500,500);
+    smooth(); 
+    background(0);
+ 
+}
+
+void draw(){
+    background(255);
+    ellipsePattern(startingWidth);
+     
+}
+
+void ellipsePattern(float eWidth){
+ stroke(255,0,0);
+ fill(#ffffff);
+ 
+ ellipse(mouseX+50,mouseY,eWidth,eWidth);
+ ellipse(mouseX-50,mouseY,eWidth,eWidth);
+ eWidth=eWidth/1.1;
+  count++;
+  if (count<45){
+    ellipsePattern(eWidth);
+ 
+  }
+  else{
+    count=0;
+  }
+}
