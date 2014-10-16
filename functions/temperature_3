@@ -31,7 +31,6 @@ void textF(int currentTemp){
 }
 
 void textC(int currentTemp){
-  println(currentTemp);
   float tempC=(currentTemp-32)*5/9;
   String fullTemp=tempC+" degrees Celsius";
   text(fullTemp,50,70);
