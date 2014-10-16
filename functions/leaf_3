@@ -1,0 +1,38 @@
+int x=20;
+int y=45;
+int a=20;
+int b=50;
+int count=0;
+
+void setup(){
+  size(600,600);
+   background(255);
+}
+
+void draw(){
+   x=int(random(width));
+   y=int(random(height));
+   if (mousePressed){
+     leaf(x,y,b,a);
+   } else {
+   leaf(x,y,a,b);
+   };
+  count++;
+ if (count>100){
+  noLoop();
+ } 
+  
+}
+
+
+void leaf(int x,int y,int a,int b){
+float pointShift = random(-20,20); // here is a variable between -20 and 20
+fill(int(random(255)),int(random(255)),int(random(255)),int(random(255)));
+  beginShape(); // start to draw a shape
+  vertex(x,y); // begin at this point x, y
+   bezierVertex(x+10,y-a,y+a,y-5,x+b + random(-20,20),y+5); // moving only the pointy point meant that sometimes the leaf shape would turn into a heart shape, because the control points were not also moving. So I created a variable called pointShift
+    bezierVertex(x+10,y-a, x+20 + pointShift,y-5 + pointShift/2, x+b + pointShift,y+5); // make the pointy end of the leaf vary on the x axis (so the leaf gets longer or shorter) AND vary the y axis of the control points by the same amount. It should be possible to have 'normal' leaves, very short fat ones and very long thin ones.
+    bezierVertex(x+20 + pointShift,y+10, x+10,y+20, x,y); // draw the other half of the shape
+  endShape();
+  // excerpt from http://www.openprocessing.org/sketch/7743 (and then manipulated)
+}
