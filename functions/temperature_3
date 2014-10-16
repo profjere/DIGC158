@@ -1,0 +1,40 @@
+int currentTemp;
+
+void setup(){
+ size(600,200); 
+  
+  
+}
+void draw(){
+ background(255);
+ currentTemp=showTemp();
+ textF(currentTemp);
+}
+
+int showTemp(){
+   stroke(#000000);
+   strokeWeight(25);
+   line(40,10,560,10);
+   int temp=constrain(mouseX,40,560);
+   stroke (255,0,0);
+   line(temp,10,temp,35);
+   return temp;
+   
+}
+
+void textF(int currentTemp){
+  int limitedTemp=int(map(currentTemp,10,560,-20,110));
+  String fullTemp=limitedTemp+" degrees Fahrenheit";
+  fill(255,0,0);
+  text(fullTemp,50,50);
+  textC(limitedTemp);
+}
+
+void textC(int currentTemp){
+  println(currentTemp);
+  float tempC=(currentTemp-32)*5/9;
+  String fullTemp=tempC+" degrees Celsius";
+  text(fullTemp,50,70);
+  
+}
+
