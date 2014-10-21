@@ -1,0 +1,74 @@
+int rX;
+int rY;
+boolean stayX;
+boolean stayY;
+int backgroundColorChoice=255;
+
+void setup(){
+ size(500,500);
+  smooth(); 
+  noStroke();
+  rX=width/2;
+  rY=height/2;
+  rectMode(CENTER);
+  ellipseMode(CENTER);
+  
+}
+
+void draw(){
+  background(backgroundColorChoice);
+  fill(255,0,0);
+  ellipse(mouseX,mouseY,50,50);
+  moveRectangle();
+}
+
+void moveRectangle(){
+ int changeX=int(random(10)-5);
+ if (!stayX){
+   rX=constrain(rX+changeX,50,width-50);
+ }
+ int changeY=int(random(10)-5);
+ if (!stayY){
+   rY=constrain(rY+changeY,50,height-50);
+ }
+ fill(0,255,0);
+ rect(rX,rY,30,30);  
+}
+
+void mousePressed(){
+  stayX=false;
+  stayY=false;
+  int directionXY=int(random(2));
+  if (directionXY==0){
+    stayX=true;} 
+    else{
+      stayY=true;
+    };
+}
+
+void mouseReleased(){
+  stayX=false;
+  stayY=false;
+}
+
+void keyPressed(){
+  noLoop();
+}
+
+void keyReleased(){
+  loop();
+}
+
+void mouseDragged(){
+  int shapeDistance=int(dist(mouseX,mouseY,rX,rY));
+  if (shapeDistance<20){
+    rX=mouseX;
+    rY=mouseY;
+  };
+}
+ 
+
+/*void mouseMoved(){
+  backgroundColorChoice=int(random(255));
+}
+*/
