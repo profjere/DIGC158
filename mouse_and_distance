@@ -23,12 +23,12 @@ void draw(){
 }
 
 void moveRectangle(){
- int changeX=int(random(10)-5);
  if (!stayX){
+   int changeX=int(random(10)-5);
    rX=constrain(rX+changeX,50,width-50);
  }
- int changeY=int(random(10)-5);
  if (!stayY){
+   int changeY=int(random(10)-5);
    rY=constrain(rY+changeY,50,height-50);
  }
  fill(0,255,0);
