@@ -1,0 +1,24 @@
+int xT=0;
+int direction=50;
+
+void setup(){
+  size(500,500);
+  smooth();
+}
+
+void draw(){
+ //background(255);
+  rectMode(CENTER);
+  moveShapes();
+}
+
+void moveShapes(){
+  xT=xT+direction;
+  translate(width/2,height/2);
+  rotate(xT);
+  rect(0,0,45,45);
+  //delay(50);
+  //rect(50,50,25,25);
+  
+}
+  
