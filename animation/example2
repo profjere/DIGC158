@@ -1,0 +1,25 @@
+int xT=0;
+int direction=1;
+
+void setup(){
+  size(500,500);
+  smooth();
+}
+
+void draw(){
+  background(255);
+  moveShapes();
+}
+
+void moveShapes(){
+  xT=xT+direction;
+  translate(xT,0);
+  rect(50,50,30,30);
+  triangle(200,200,320,180,180,96);
+  ellipse(25,425,20,20);
+  if((xT>width)||(xT<0)){
+    direction=direction*-1;
+  
+}
+  
+}
