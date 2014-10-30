@@ -1,0 +1,26 @@
+int x;
+int moveDown=0;
+
+void setup(){
+  size(600,600);
+  smooth();
+}
+
+void draw(){
+  newDrops();
+}
+
+void newDrops(){
+  moveDrops();
+  x=int(random(width));
+  strokeWeight(int(random(4)));
+  line(x,0,x,int(random(5)));
+}
+
+void moveDrops(){
+  moveDown++;
+  translate(0,moveDown); 
+  if (moveDown>height){
+    moveDown=0;
+  }
+}
