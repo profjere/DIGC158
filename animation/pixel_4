@@ -1,0 +1,30 @@
+PImage mountain;
+PImage sunset;
+int currentPixelColor;
+int pixelWidth=5;
+
+void setup(){
+  size(800,500);
+  mountain=loadImage("red_mountains.jpg");
+  image(mountain,0,0);
+}
+
+void draw(){
+  
+
+ }
+
+void mousePressed(){
+  // filter(ERODE);
+   filter(INVERT);
+  // filter(DILATE);
+   //filter(GRAY);
+   //filter(THRESHOLD,.4);
+  // filter(POSTERIZE,2);
+    }
+
+   
+void mouseReleased(){
+   //filter(POSTERIZE,10);
+   filter(INVERT);
+}
