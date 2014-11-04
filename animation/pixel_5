@@ -1,0 +1,22 @@
+PImage mountain;
+PImage bigX;
+
+int x=50;
+
+void setup(){
+  size(800,500);
+  mountain=loadImage("red_mountains.jpg");
+  bigX=loadImage("big_x.jpg");
+  image(mountain,0,0);
+  blend(bigX,0,0,width,height,0,0,width,height,MULTIPLY);
+  //blend(bigX,50,30,width-100,height-100,50,30,width-100,height-100,MULTIPLY);//crops tighter
+}
+
+void draw(){
+  blend(bigX,0,0,width,height,x,0,width,height,MULTIPLY);
+  x++;
+
+ 
+}
+
+
