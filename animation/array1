@@ -1,0 +1,24 @@
+
+int[] x={30,60,92,140,190,250,290,330,380};
+
+
+
+void setup(){
+  size(300,300);
+ stroke(255);
+  smooth();
+  fill(255,102);
+ 
+}
+
+void draw(){
+  background(0);
+  if (mousePressed){
+    x[5]=mouseX;}
+  for (int i=0;i<x.length;i++){
+  line(x[i],0,x[i],height);
+    }
+}
+
+    
+    
