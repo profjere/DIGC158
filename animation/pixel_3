@@ -1,0 +1,29 @@
+PImage mountain;
+PImage sunset;
+int currentPixelColor;
+int pixelWidth=5;
+
+void setup(){
+  size(800,500);
+  mountain=loadImage("red_mountains.jpg");
+  image(mountain,0,0);
+}
+
+void draw(){
+  
+
+ }
+
+void mousePressed(){
+   for (int x=0;x<width;x=x+pixelWidth+1){
+    for (int y=0;y<width;y=y+pixelWidth+1){
+   currentPixelColor=get(x,y);
+   fill(currentPixelColor);
+   rect(x,y,pixelWidth,pixelWidth);
+    }
+   }
+ }
+   
+void mouseReleased(){
+   image(mountain,0,0);
+}
