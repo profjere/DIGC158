@@ -1,0 +1,26 @@
+PImage mountain;
+PImage bigX;
+
+
+
+void setup(){
+  size(800,500);
+  mountain=loadImage("red_mountains_800x500.jpg");
+  rectMode(CENTER);
+}
+
+void draw(){
+  background(mountain);
+  color c=get(mouseX,mouseY);
+ /* float r=red(c);
+  float g=green(c);
+  float b=blue(c);
+  fill(0,g,0);
+  */
+  fill(c);
+  ellipse(mouseX,mouseY,30,30);
+
+ 
+}
+
+
