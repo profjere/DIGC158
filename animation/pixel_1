@@ -1,0 +1,13 @@
+PImage mountain;
+PImage sunset;
+
+void setup(){
+  size(800,500);
+  mountain=loadImage("red_mountains.jpg");
+}
+
+void draw(){
+ image(mountain,0,0); 
+ sunset=get(400,100,200,100);
+ image(sunset,250,150);
+}
