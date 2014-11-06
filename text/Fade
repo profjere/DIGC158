@@ -1,0 +1,19 @@
+PFont font;
+int x=100;
+int y=145;
+int fadeValue=255;
+
+
+void setup(){
+   size(400,300);
+    font=loadFont("HoboStd-48.vlw");
+  textFont(font);
+   fill(0);
+}
+
+void draw(){
+  background(255);
+  fill(0,fadeValue);
+  text("Here I AM",x,y);
+  fadeValue--;
+}
