@@ -1,0 +1,26 @@
+PFont font;
+String word="Number Line";
+char[] letters;
+float angle;
+
+void setup(){
+   size(400,300);
+    font=loadFont("HoboStd-48.vlw");
+    textFont(font);
+    letters=word.toCharArray();
+    fill(0);
+}
+
+void draw(){
+  background(255);
+  //translate(width/2,height/2);
+  fill(0);
+  translate(width/2,height/2);
+  for (int i=0;i<letters.length;i++){ 
+    angle=map(mouseX,0,width,0,PI/4);
+    println(angle);
+    rotate(angle);
+    text(letters[i],letters.length*10,50);
+  }
+
+}
