@@ -1,0 +1,22 @@
+PFont font;
+String[] poem={"Mary","Had","a","Little","Lamb"};
+int word=0;
+
+void setup(){
+   size(400,300);
+    font=loadFont("HoboStd-48.vlw");
+  textFont(font);
+  textAlign(CENTER);
+  frameRate(4);
+   fill(0);
+}
+
+void draw(){
+  background(255);
+  text(poem[word],width/2,height/2);
+  word++;
+  if (word==poem.length){
+    word=0;
+  };
+  
+}
