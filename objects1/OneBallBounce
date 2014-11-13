@@ -1,0 +1,17 @@
+Car car;
+int yCoordinate;
+
+void setup(){
+  size(300,300);
+  smooth();
+  car = new Car(20,30,1,2);
+}
+
+void draw(){
+  background(0);
+  car.move();
+  car.display();
+  car.bounce();
+  yCoordinate=car.y;
+  text(yCoordinate,width/2,height/2);
+}
