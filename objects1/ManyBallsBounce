@@ -1,0 +1,24 @@
+Car[] car=new Car[20];
+int randomX,randomY,randomxDirection,randomyDirection;
+
+void setup(){
+  size(300,300);
+  smooth();
+  for (int i=0;i<car.length;i++){
+    randomX=int(random(width));
+    randomY=int(random(height));
+    randomxDirection=int(random(6))-3;
+    randomyDirection=int(random(6))-3;
+    car[i] = new Car(randomX,randomY,randomxDirection,randomyDirection);
+  }
+}
+
+void draw(){
+  background(0);
+  for (int i=0;i<car.length;i++){
+    car[i].move();
+    car[i].display();
+    car[i].bounce();
+  }
+  
+}
