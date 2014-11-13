@@ -30,20 +30,23 @@ void draw(){
 void collide(int aCar){
   boolean collide=false;
   float theDistance;
+  
+//notice the closing curly bracket comes at the end, not here.
 
   for (int i=0;i<car.length;i++){
     if ((i!=aCar) && (collide==false)){
+    //check it out if you remove one or both of the conditions.
+    
       theDistance=dist(car[aCar].x,car[aCar].y,car[i].x,car[i].y);
       println(theDistance);
-    if (theDistance<30){
-     
-      collide=true;
-      println("collide");
-      car[i].xDirection=car[i].xDirection*-1;
-    car[i].yDirection=car[i].yDirection*-1;
-    car[aCar].xDirection=car[aCar].xDirection*-1;
-    car[aCar].yDirection=car[aCar].yDirection*-1;
-    }
+      if (theDistance<30){
+        collide=true;
+        println("collide");
+        car[i].xDirection=car[i].xDirection*-1;
+        car[i].yDirection=car[i].yDirection*-1;
+        car[aCar].xDirection=car[aCar].xDirection*-1;
+        car[aCar].yDirection=car[aCar].yDirection*-1;
+      }
     }
   }
 }
