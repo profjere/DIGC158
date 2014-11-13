@@ -1,0 +1,52 @@
+Car[] car=new Car[20];
+int randomX,randomY,randomxDirection,randomyDirection;
+
+void setup(){
+  size(300,300);
+  smooth();
+  for (int i=0;i<car.length;i++){
+    randomX=int(random(width));
+    randomY=int(random(height));
+    randomxDirection=int(random(6))-3;
+    randomyDirection=int(random(6))-3;
+    if ((randomxDirection==0)&&(randomyDirection==0)){
+      randomxDirection=1;
+    }
+    car[i] = new Car(randomX,randomY,randomxDirection,randomyDirection);
+  }
+}
+
+void draw(){
+  background(0);
+  for (int i=0;i<car.length;i++){
+    car[i].move();
+    car[i].display();
+    car[i].bounce();
+    collide(i);
+  }
+  
+}
+
+void collide(int aCar){
+  boolean collide=false;
+  float theDistance;
+
+  for (int i=0;i<car.length;i++){
+    if ((i!=aCar) && (collide==false)){
+      theDistance=dist(car[aCar].x,car[aCar].y,car[i].x,car[i].y);
+      println(theDistance);
+    if (theDistance<30){
+     
+      collide=true;
+      println("collide");
+      car[i].xDirection=car[i].xDirection*-1;
+    car[i].yDirection=car[i].yDirection*-1;
+    car[aCar].xDirection=car[aCar].xDirection*-1;
+    car[aCar].yDirection=car[aCar].yDirection*-1;
+    }
+    }
+  }
+}
+ 
+ 
+ 
