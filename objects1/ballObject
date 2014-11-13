@@ -1,0 +1,32 @@
+class Car {
+  int x,y,xDirection,yDirection;
+
+
+Car(int x1,int y1,int xDirection1,int yDirection1){
+  x=x1;
+  y=y1;
+  xDirection=xDirection1;
+  yDirection=yDirection1;
+}
+
+void move(){
+  x=x+xDirection;
+  y=y+yDirection;
+}
+
+void display(){
+  fill(255,0,0);
+  rect(x,y,10,10);
+  
+}
+
+void bounce(){
+  if ((x>width) || (x<0)){
+    xDirection=xDirection*-1;
+  };
+  if ((y>height) || (y<0)){
+    yDirection=yDirection*-1;
+  }
+}
+}
+  
