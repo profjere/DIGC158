@@ -1,0 +1,37 @@
+class Follower {
+  int x,y,xDirection,yDirection;
+
+
+Follower(int x1,int y1){
+  x=x1;
+  y=y1;
+  xDirection=1;
+  yDirection=1;
+}
+
+void move(){
+  
+    x=x+xDirection;
+    y=y+yDirection;
+   
+}
+
+void display(){
+  fill(0,255,0);
+  rect(x,y,12,12);
+  
+}
+
+void bounce(){
+  if ((x>width) || (x<0)){
+    x=0;
+   
+  };
+  if ((y>height) || (y<0)){
+    y=0;
+
+  }
+}
+
+}
+  
