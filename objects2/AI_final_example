@@ -1,0 +1,40 @@
+int numberOfActors=3;
+Nomad[] nomad=new Nomad[numberOfActors];
+Follower[] follower=new Follower[numberOfActors];
+int randomX,randomY;
+
+
+void setup(){
+ size(400,400);
+  smooth();
+   for (int i=0;i<nomad.length;i++){
+    randomX=int(random(width));
+    randomY=int(random(height));
+    nomad[i] = new Nomad(randomX,randomY);
+   };
+   for (int i=0;i<follower.length;i++){
+    randomX=int(random(width));
+    randomY=int(random(height));
+   follower[i] = new Follower(randomX,randomY);
+  };
+}
+
+void draw(){
+  background(0);
+   for (int i=0;i<nomad.length;i++){
+    nomad[i].bounce();
+    nomad[i].move();
+    nomad[i].display();
+   };
+   
+   for (int i=0;i<follower.length;i++){
+      follower[i].xDirection=nomad[i].xDirection;
+      follower[i].yDirection=nomad[i].yDirection;
+      follower[i].bounce();
+      follower[i].move();
+      follower[i].display();
+   };
+     }
+     
+
+
