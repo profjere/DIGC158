@@ -1,0 +1,42 @@
+class Nomad {
+  int x,y,xDirection,yDirection,directionChangeTime;
+  int howScattered=50;
+
+Nomad(int x1,int y1){
+  x=x1;
+  y=y1;
+  xDirection=1;
+  yDirection=1;
+  directionChangeTime=0;
+}
+
+void move(){
+  if (directionChangeTime>howScattered){
+    directionChangeTime=0;
+    xDirection=int(random(8))-4;
+    yDirection=int(random(8))-4;
+  };
+    x=x+xDirection;
+    y=y+yDirection;
+    directionChangeTime++;
+}
+
+void display(){
+  fill(255,0,0);
+  rect(x,y,12,12);
+  
+}
+
+void bounce(){
+  if ((x>width) || (x<0)){
+    xDirection=xDirection*-1;
+   
+  };
+  if ((y>height) || (y<0)){
+    yDirection=yDirection*-1;
+
+  }
+}
+
+}
+  
